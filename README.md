@@ -23,6 +23,7 @@ XOR outputs 1 or True if both input bits are different (1 & 0) and it outputs 0 
   </tbody>
 </table>
 
+You can use the XOR operation to encrypt text files by mapping each character in a string to the unicode character code, the <code>ord()</code> function in python and the <code> ^ </code> operator is XOR.  You then apply the following transformation to each character in the file <code> ord(c) ^ secret_key </code> where secret key is some integer or collection of integers.  For maximum security the secret_key should be an array of integers and to encrypt the ith character in a string you will <code> ord(s[i]) ^ secret_key[i % len(secret_key)]</code> where <i>s</i> is the string to be encrypted.
 
 Creating the Executable
 
