@@ -29,4 +29,6 @@ Creating the Executable
 
 If you want to create an executable, so that you can get unsuspecting targets to deploy the worm use the <a href="https://www.pyinstaller.org/">pyinstaller</a> module.  To install with python: <code>pip install pyinstaller</code>.  To create the executable <code> pyinstaller --onefile --icon=file.ico worm.py </code> the <code> --icon=file.ico </code> flag is only if you want to add an icon for your executable (I'm trying to disguise my executable as a text file).  The onefile flag ensures that the executable can run without dependencies and be moved from the <i>dist</i> folder after created.
 
-Spoofing the File Icon and Extension
+Spoofing the File Extension
+
+To spoof the file extension so the target does not see the <i>.exe</i> suffix attached to executable files, you can use the <code>spoof_file.py</code> python file.  This code takes to command line arguments: <i>file_name</i> and <i>file_extension</i> and can be run from the command line: <code>python spoof_file.py "worm" "exe"</code>.  So what this code does is it leverages a special unicode character called "right to left" or <b>\u202e</b> which reverses the characters that follow it.  For example: "\u202e txt.exe" -> "exe.txt", in other words we can mask file extensions.
