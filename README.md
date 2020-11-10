@@ -2,7 +2,7 @@
 
 This is a really basic piece of malware that I wrote in python that encrypts all of the text files in the directory that the malware executable is launched.  The script can be run without using the executable: <code> python worm.py </code>.  The executable is in the sandbox directory with some test files that will get encrypted if you launch the executable.  
 
-<b style="color: indigo;">XOR Encryption</b>
+<div style="color: indigo;">XOR Encryption</div>
 
 XOR outputs 1 or True if both input bits are different (1 & 0) and it outputs 0 or False if both ouput bits are the same (1 & 1 or 0 & 0).
 
@@ -31,6 +31,6 @@ If you want to create an executable, so that you can get unsuspecting targets to
 
 <b style="color: indigo;">Spoofing the File Extension</b>
 
-To spoof the file extension so the target does not see the <i>.exe</i> suffix attached to executable files, you can use the <code>spoof_file.py</code> python file.  This code takes to command line arguments: <i>file_name</i> and <i>file_extension</i> and can be run from the command line: <code>python spoof_file.py "worm" "exe"</code>.  So what this code does is it leverages a special unicode character called "right to left" or <b>\u202e</b> which reverses the characters that follow it.  For example: "\u202e txt.exe" -> "exe.txt", in other words we can mask file extensions.  If you check out the executable, <i>"worm exe.txt"</i> in the sandbox directory you will notice the suffix been spoofed.  An unsuspecting target might think they are opening a text file, but in reality they just encrypted all text files in the current directory.
+To spoof the file extension so the target does not see the <i>.exe</i> suffix attached to executable files, you can use the <code>spoof_file.py</code> python file.  This code takes two command line arguments: <i>file_name</i> and <i>file_extension</i> and can be run from the command line: <code>python spoof_file.py "worm" "exe"</code>.  So what this code does is it leverages a special unicode character called "right to left" or <b>\u202e</b> which reverses the characters that follow it.  For example: "\u202e txt.exe" -> "exe.txt", in other words we can mask file extensions.  If you check out the executable, <i>"worm exe.txt"</i> in the sandbox directory you will notice the suffix been spoofed.  An unsuspecting target might think they are opening a text file, but in reality they just encrypted all text files in the current directory.
 
 Conclusions
