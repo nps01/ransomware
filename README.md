@@ -27,4 +27,6 @@ You can use the XOR operation to encrypt text files by mapping each character in
 
 Creating the Executable
 
+If you want to create an executable, so that you can get unsuspecting targets to deploy the worm use the <a href="https://www.pyinstaller.org/">pyinstaller</a> module.  To install with python: <code>pip install pyinstaller</code>.  To create the executable <code> pyinstaller --onefile --icon=file.ico worm.py </code> the <code> --icon=file.ico </code> flag is only if you want to add an icon for your executable (I'm trying to disguise my executable as a text file).  The onefile flag ensures that the executable can run without dependencies and be moved from the <i>dist</i> folder after created.
+
 Spoofing the File Icon and Extension
