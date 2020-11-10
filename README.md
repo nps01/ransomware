@@ -2,17 +2,7 @@
 
 This is a really basic piece of malware that I wrote in python that encrypts all of the text files in the directory that the malware executable is launched.  The script can be run without using the executable: <code> python worm.py </code>.  The executable is in the sandbox directory with some test files that will get encrypted if you launch the executable.  
 
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" 
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="100" height="50"
->
-  <text font-size="16" x="10" y="20">
-    <tspan fill="red">Hello</tspan>,
-    <tspan fill="green">world</tspan>!
-  </text>
-</svg>
+<font style="color: red;">XOR</font>
 
 XOR outputs 1 or True if both input bits are different (1 & 0) and it outputs 0 or False if both ouput bits are the same (1 & 1 or 0 & 0).
 
